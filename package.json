@@ -9,8 +9,7 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "check-dependencies": "rnx-dep-check",
-    "fix-dependencies": "rnx-dep-check --write",
-    "bundle": "react-native rnx-bundle"
+    "fix-dependencies": "rnx-dep-check --write"
   },
   "dependencies": {
     "jsc-android": "^250230.2.1",
