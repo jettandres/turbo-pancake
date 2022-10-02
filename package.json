@@ -10,9 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "check-dependencies": "rnx-dep-check",
     "fix-dependencies": "rnx-dep-check --write",
-    "bundle": "pnpm bundle:ios && pnpm bundle:android",
-    "bundle:android": "react-native rnx-bundle --entry-file index.js --platform android --bundle-output android/app/src/main/assets/index.android.bundle --sourcemap-output android/main.jsbundle.map --assets-dest android/app/src/main/res/",
-    "bundle:ios": "react-native rnx-bundle --entry-file index.js --platform ios --bundle-output ios/main.jsbundle --sourcemap-output ios/main.jsbundle.map --assets-dest ios/rnx-assets"
+    "bundle": "react-native rnx-bundle"
   },
   "dependencies": {
     "jsc-android": "^250230.2.1",
@@ -64,6 +62,25 @@
       "metro-config",
       "react",
       "react-test-renderer"
-    ]
+    ],
+    "bundle": {
+      "entryFile": "index.js",
+      "targets": [
+        "android",
+        "ios"
+      ],
+      "platforms": {
+        "android": {
+          "bundleOutput": "android/app/src/main/assets/index.android.bundle",
+          "sourcemapOutput": "android/main.jsbundle.map",
+          "assetsDest": "android/app/src/main/res/"
+        },
+        "ios": {
+          "bundleOutput": "ios/main.jsbundle",
+          "sourcemapOutput": "ios/main.jsbundle.map",
+          "assetsDest": "ios/rnx-assets"
+        }
+      }
+    }
   }
 }
