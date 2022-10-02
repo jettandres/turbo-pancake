@@ -80,7 +80,8 @@
           "sourcemapOutput": "ios/main.jsbundle.map",
           "assetsDest": "ios/rnx-assets"
         }
-      }
+      },
+      "treeShake": true
     }
   }
 }
