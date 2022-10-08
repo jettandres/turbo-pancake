@@ -69,3 +69,6 @@ ios/rnx-assets
 # Ruby / CocoaPods
 /ios/Pods/
 /vendor/bundle/
+
+# For Detox setup
+./temp/test-butler-app.apk

@@ -142,6 +142,9 @@ android {
         versionName "1.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
 
+	testBuildType System.getProperty('testBuildType', 'debug')
+	testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
         if (isNewArchitectureEnabled()) {
             // We configure the CMake build only if you decide to opt-in for the New Architecture.
             externalNativeBuild {
@@ -249,12 +252,16 @@ android {
 }
 
 dependencies {
+    androidTestImplementation('com.wix:detox:+')
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+
+    implementation "androidx.appcompat:appcompat:1.5.1"
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'

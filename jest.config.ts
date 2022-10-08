@@ -17,4 +17,5 @@ export default {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   moduleNameMapper: {},
   transformIgnorePatterns: [],
+  globalSetup: "./jest.global.js",
 }
