@@ -23,10 +23,12 @@ specifiers:
   '@typescript-eslint/parser': ^5.37.0
   babel-jest: ^26.6.3
   detox: ^19.12.3
+  detox-recorder: ^1.0.151
   eslint: ^7.32.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.2.1
   jest: ^26.6.3
+  jest-circus: ^26.6.3
   jsc-android: ^250230.2.1
   metro-config: ^0.72.1
   metro-react-native-babel-preset: ^0.72.1
@@ -68,10 +70,12 @@ devDependencies:
   '@typescript-eslint/parser': 5.38.1_3rubbgt5ekhqrcgx4uwls3neim
   babel-jest: 26.6.3_@babel+core@7.19.3
   detox: 19.12.5_jest@26.6.3
+  detox-recorder: 1.0.151
   eslint: 7.32.0
   eslint-config-prettier: 8.5.0_eslint@7.32.0
   eslint-plugin-prettier: 4.2.1_7gsvg5lgwpfdww3i7smtqxamuy
   jest: 26.6.3_ts-node@10.9.1
+  jest-circus: 26.6.3_ts-node@10.9.1
   metro-config: 0.72.3
   metro-react-native-babel-preset: 0.72.3
   prettier: 2.7.1
@@ -3431,6 +3435,10 @@ packages:
     resolution: {integrity: sha512-hjf+xovcEn31w/EUYdTXQh/8smFL/dzYjohQGEIgjyNavaJfBY2p5F527Bo1VPATxv0VYTUC2bOcXvqFwk78Og==}
     engines: {node: '>=0.10'}
 
+  /dedent/0.7.0:
+    resolution: {integrity: sha512-Q6fKUPqnAHAyhiUgFU7BUzLiv0kd8saH9al7tnu5Q/okj6dnupxyTgFIBjVzJATdfIAm9NAsvXNzjaKa+bxVyA==}
+    dev: true
+
   /deep-is/0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
     dev: true
@@ -3494,6 +3502,11 @@ packages:
   /detect-newline/3.1.0:
     resolution: {integrity: sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==}
     engines: {node: '>=8'}
+    dev: true
+
+  /detox-recorder/1.0.151:
+    resolution: {integrity: sha512-a4ZPo7AR5XJJiLy8Xqml8YXxrIz6R7RKfiGmG9u5MBxG2I+w+yGJTj7ZhYDfoi5StpUD+dKHTCdvycZTOQ84Cw==}
+    requiresBuild: true
     dev: true
 
   /detox/19.12.5_jest@26.6.3:
@@ -5163,6 +5176,39 @@ packages:
       '@jest/types': 26.6.2
       execa: 4.1.0
       throat: 5.0.0
+    dev: true
+
+  /jest-circus/26.6.3_ts-node@10.9.1:
+    resolution: {integrity: sha512-ACrpWZGcQMpbv13XbzRzpytEJlilP/Su0JtNCi5r/xLpOUhnaIJr8leYYpLEMgPFURZISEHrnnpmB54Q/UziPw==}
+    engines: {node: '>= 10.14.2'}
+    dependencies:
+      '@babel/traverse': 7.19.3
+      '@jest/environment': 26.6.2
+      '@jest/test-result': 26.6.2
+      '@jest/types': 26.6.2
+      '@types/babel__traverse': 7.18.2
+      '@types/node': 18.7.23
+      chalk: 4.1.2
+      co: 4.6.0
+      dedent: 0.7.0
+      expect: 26.6.2
+      is-generator-fn: 2.1.0
+      jest-each: 26.6.2
+      jest-matcher-utils: 26.6.2
+      jest-message-util: 26.6.2
+      jest-runner: 26.6.3_ts-node@10.9.1
+      jest-runtime: 26.6.3_ts-node@10.9.1
+      jest-snapshot: 26.6.2
+      jest-util: 26.6.2
+      pretty-format: 26.6.2
+      stack-utils: 2.0.5
+      throat: 5.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - supports-color
+      - ts-node
+      - utf-8-validate
     dev: true
 
   /jest-cli/26.6.3_ts-node@10.9.1:

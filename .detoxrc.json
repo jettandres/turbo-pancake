@@ -31,8 +31,8 @@
       "type": "android.emulator",
       "device": {
         "avdName": "Pixel_6_Pro_API_29_AOSP"
-      }
-      "utilBinaryPaths": ["./temp/test-butler-app.apk"],
+      },
+      "utilBinaryPaths": ["./temp/test-butler-app.apk"]
     }
   },
   "configurations": {
