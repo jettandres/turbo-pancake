@@ -5,6 +5,17 @@ export default {
       babelConfig: true,
     },
   },
+  transform: {
+    "^.+\\.jsx$": "babel-jest",
+    "^.+\\.tsx?$": [
+      "ts-jest",
+      {
+        tsconfig: "tsconfig.json",
+      },
+    ],
+  },
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   moduleNameMapper: {},
   transformIgnorePatterns: [],
+  globalSetup: "./jest.global.js",
 }
