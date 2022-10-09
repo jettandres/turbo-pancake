@@ -3,11 +3,17 @@
   "runnerConfig": "e2e/config.json",
   "skipLegacyWorkersInjection": true,
   "apps": {
+    "ios.debug": {
+      "name": "TurboPancake",
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/TurboPancake.app",
+      "build": "xcodebuild -workspace ios/TurboPancake.xcworkspace -configuration Debug -scheme TurboPancake -sdk iphonesimulator -derivedDataPath ios/build"
+    },
     "ios.release": {
       "name": "TurboPancake",
       "type": "ios.app",
       "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/TurboPancake.app",
-      "build": "xcodebuild -workspace ios/TurboPancake.xcworkspace -scheme TurboPancake -sdk iphonesimulator -derivedDataPath ios/build"
+      "build": "xcodebuild -workspace ios/TurboPancake.xcworkspace -configuration Release -scheme TurboPancake -sdk iphonesimulator -derivedDataPath ios/build"
     },
     "android.debug": {
       "type": "android.apk",
@@ -36,6 +42,10 @@
     }
   },
   "configurations": {
+    "ios.sim.debug": {
+      "device": "simulator",
+      "app": "ios.debug"
+    },
     "ios.sim.release": {
       "device": "simulator",
       "app": "ios.release"
