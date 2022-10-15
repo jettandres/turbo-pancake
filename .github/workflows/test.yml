@@ -1,0 +1,22 @@
+name: Run Tests
+
+on: pull_request
+
+jobs:
+  unit_tests:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: pnpm/action-setup@master
+        with:
+          version: 7.9.0
+
+      - name: Install node modules
+        run: pnpm install
+
+      - name: Run unit tests
+        run: pnpm test
