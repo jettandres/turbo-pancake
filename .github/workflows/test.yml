@@ -3,20 +3,15 @@ name: Run Tests
 on: pull_request
 
 jobs:
+  setup_node:
+    uses: ./.github/workflows/setup.yml
+    with:
+      os: "ubuntu-latest"
+
   unit_tests:
-    name: Lint
+    name: Run Unit Tests
+    needs: setup_node
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Setup Node
-        uses: pnpm/action-setup@master
-        with:
-          version: 7.9.0
-
-      - name: Install node modules
-        run: pnpm install
-
       - name: Run unit tests
         run: pnpm test
