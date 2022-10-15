@@ -77,7 +77,7 @@ jobs:
           cache: "gradle"
 
       - name: Install Detox CLI
-        run: npm install detox-cli --global
+        run: pnpm install detox-cli -D
 
       - name: Run Detox Build
         run: detox build --configuration android.emu.release
