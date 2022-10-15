@@ -23,7 +23,7 @@
     "android.release": {
       "type": "android.apk",
       "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
-      "build": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && cd .."
+      "build": "rm -rf ./android/app/src/main/res/drawable-* && rm -rf ./android/app/src/main/res/raw && cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && cd .."
     }
   },
   "devices": {
