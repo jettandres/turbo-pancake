@@ -4,7 +4,7 @@ pnpm start &
 
 METRO_BUNDLER_PID=$!
 
-detox build --configuration android.emu.release --headless
+detox test --configuration android.emu.release --headless
 
 DETOX_EXIT_CODE=$?
 
