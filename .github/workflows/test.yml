@@ -76,8 +76,11 @@ jobs:
           java-version: "8"
           cache: "gradle"
 
+      - name: Install node modules
+        run: pnpm install
+
       - name: Install Detox CLI
-        run: pnpm install detox-cli -D
+        run: pnpm install detox-cli -g
 
       - name: Run Detox Build
         run: detox build --configuration android.emu.release
