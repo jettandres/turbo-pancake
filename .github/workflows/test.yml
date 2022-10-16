@@ -85,12 +85,32 @@ jobs:
       - name: Run Detox Build
         run: detox build --configuration android.emu.release
 
+      - name: AVD cache
+        uses: actions/cache@v3
+        id: avd-cache
+        with:
+          path: |
+            ~/.android/avd/*
+            ~/.android/adb*
+          key: avd-30
+
+      - name: create AVD and generate snapshot for caching
+        if: steps.avd-cache.outputs.cache-hit != 'true'
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          force-avd-creation: false
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          disable-animations: false
+          script: echo "Generated AVD snapshot for caching."
+
       - name: Run Detox Tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 29
-          target: default
+          api-level: 30
+          target: aosp_atd
           arch: x86
+          channel: canary
           profile: pixel
-          avd-name: Pixel_6_Pro_API_29_AOSP
+          avd-name: Pixel_6_Pro_API_30_AOSP
           script: bash ${{ github.workspace }}/scripts/run-e2e-android-release.sh
