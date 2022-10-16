@@ -36,6 +36,13 @@
     "emulator": {
       "type": "android.emulator",
       "device": {
+        "avdName": "Pixel_6_Pro_API_29_AOSP"
+      },
+      "utilBinaryPaths": ["./temp/test-butler-app.apk"]
+    },
+    "emulator.gh": {
+      "type": "android.emulator",
+      "device": {
         "avdName": "Pixel_6_Pro_API_30_AOSP"
       },
       "utilBinaryPaths": ["./temp/test-butler-app.apk"]
@@ -55,7 +62,7 @@
       "app": "android.debug"
     },
     "android.emu.release": {
-      "device": "emulator",
+      "device": "emulator.gh",
       "app": "android.release"
     }
   }

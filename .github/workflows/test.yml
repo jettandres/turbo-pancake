@@ -92,6 +92,7 @@ jobs:
           target: aosp_atd
           arch: x86
           channel: canary
-          profile: pixel
+          heap-size: 576M
+          ram-size: 2048M
           avd-name: Pixel_6_Pro_API_30_AOSP
           script: bash ${{ github.workspace }}/scripts/run-e2e-android-release.sh
