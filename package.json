@@ -86,7 +86,8 @@
           "assetsDest": "ios/rnx-assets"
         }
       },
-      "treeShake": true
+      "treeShake": true,
+      "detectDuplicateDependencies": true
     }
   }
 }

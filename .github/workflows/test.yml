@@ -1,0 +1,98 @@
+name: Run Tests
+
+on: pull_request
+
+jobs:
+  unit_tests:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@master
+        with:
+          node-version: "16.3.0"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@master
+        with:
+          version: 7.9.0
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install node modules
+        run: pnpm install
+
+      - name: Run unit tests
+        run: pnpm test
+
+  detox_tests:
+    name: Run Detox Tests
+    runs-on: macos-12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@master
+        with:
+          node-version: "16.3.0"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@master
+        with:
+          version: 7.9.0
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: "temurin"
+          java-version: "11"
+          cache: "gradle"
+
+      - name: Install node modules
+        run: pnpm install
+
+      - name: Install Detox CLI
+        run: pnpm install detox-cli -g
+
+      - name: Run Detox Build
+        run: detox build --configuration android.emu.release
+
+      - name: Run Detox Tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          target: aosp_atd
+          arch: x86
+          channel: canary
+          heap-size: 576M
+          ram-size: 2048M
+          avd-name: Pixel_6_Pro_API_30_AOSP
+          script: bash ${{ github.workspace }}/scripts/run-e2e-android-release.sh
