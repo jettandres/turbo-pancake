@@ -94,5 +94,4 @@ jobs:
           channel: canary
           profile: pixel
           avd-name: Pixel_6_Pro_API_30_AOSP
-          working-directory: ./android
           script: bash ${{ github.workspace }}/scripts/run-e2e-android-release.sh
