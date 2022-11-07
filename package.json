@@ -32,7 +32,7 @@
     "@rnx-kit/metro-resolver-symlinks": "^0.1.21",
     "@testing-library/react-native": "^11.2.0",
     "@tsconfig/react-native": "^2.0.2",
-    "@types/jest": "^26.0.23",
+    "@types/jest": "^29.2.2",
     "@types/node": "^18.7.23",
     "@types/react": "^18.0.21",
     "@types/react-native": "^0.70.0",
