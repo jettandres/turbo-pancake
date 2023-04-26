@@ -57,39 +57,18 @@
   },
   "rnx-kit": {
     "kitType": "app",
-    "bundle": {
-      "entryFile": "index.js",
-      "targets": [
-        "android",
-        "ios"
-      ],
-      "platforms": {
-        "android": {
-          "bundleOutput": "android/app/src/main/assets/index.android.bundle",
-          "sourcemapOutput": "android/main.jsbundle.map",
-          "assetsDest": "android/app/src/main/res/"
-        },
-        "ios": {
-          "bundleOutput": "ios/main.jsbundle",
-          "sourcemapOutput": "ios/main.jsbundle.map",
-          "assetsDest": "ios/rnx-assets"
-        }
-      },
-      "treeShake": true
-    },
     "alignDeps": {
-      "presets": [
-        "microsoft/react-native"
-      ],
       "requirements": [
         "react-native@0.70"
       ],
       "capabilities": [
         "babel-preset-react-native",
+        "community/cli-android",
+        "community/cli-ios",
         "core",
         "core-android",
-        "jest",
         "core-ios",
+        "jest",
         "metro-config",
         "react",
         "react-test-renderer"
