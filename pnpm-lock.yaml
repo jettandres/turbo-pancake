@@ -4539,6 +4539,10 @@ packages:
     resolution: {integrity: sha512-1gIBiWJNR0tKUNv8gZuk7l9rVX06OuLzY9AoGio7y/JT4V1IZErEMEq2TJS+PFcw/y0RshZ1J/27VfK1UQzYVg==}
     engines: {node: '>=0.4.0'}
 
+  /flow-parser/0.185.2:
+    resolution: {integrity: sha512-2hJ5ACYeJCzNtiVULov6pljKOLygy0zddoqSI1fFetM+XRPpRshFdGEijtqlamA1XwyZ+7rhryI6FQFzvtLWUQ==}
+    engines: {node: '>=0.4.0'}
+
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
     dependencies:
@@ -5853,7 +5857,7 @@ packages:
       '@babel/register': 7.21.0_@babel+core@7.21.4
       babel-core: 7.0.0-bridge.0_@babel+core@7.21.4
       chalk: 4.1.2
-      flow-parser: 0.121.0
+      flow-parser: 0.185.2
       graceful-fs: 4.2.11
       micromatch: 3.1.10
       neo-async: 2.6.2
@@ -6156,7 +6160,7 @@ packages:
     resolution: {integrity: sha512-++eyZzwkXvijWRV3CkDbueaXXGlVzH9GA52QWqTgAOgSHYp5jWaDwLQ8qpsMkQzpwSyIF4LLK9aI3eA7Xa132A==}
     dependencies:
       metro-core: 0.72.3
-      rimraf: 2.7.1
+      rimraf: 2.6.3
 
   /metro-config/0.72.3:
     resolution: {integrity: sha512-VEsAIVDkrIhgCByq8HKTWMBjJG6RlYwWSu1Gnv3PpHa0IyTjKJtB7wC02rbTjSaemcr82scldf2R+h6ygMEvsw==}
@@ -6400,7 +6404,7 @@ packages:
       mime-types: 2.1.35
       node-fetch: 2.6.9
       nullthrows: 1.1.1
-      rimraf: 2.7.1
+      rimraf: 2.6.3
       serialize-error: 2.1.0
       source-map: 0.5.7
       strip-ansi: 6.0.1
@@ -7424,12 +7428,6 @@ packages:
 
   /rimraf/2.6.3:
     resolution: {integrity: sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==}
-    hasBin: true
-    dependencies:
-      glob: 7.2.3
-
-  /rimraf/2.7.1:
-    resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
     hasBin: true
     dependencies:
       glob: 7.2.3
